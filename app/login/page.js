@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-export default function Home() {
+export default function Login() {
   return (
     <div className="mx-auto text-center pt-4 bg-gradient-to-b from-red-100 to-red-900 min-h-screen">
       <div className="min-w-0 flex-1">
@@ -9,11 +7,11 @@ export default function Home() {
           <span className="text-red-600">USC</span> <span className="text-yellow-500">RIDESHARE</span>
         </h2>
       </div>
-      <Link href="/login">
-        <button>
-          Login!
+      <div>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Login with Google
         </button>
-      </Link>
+      </div>
     </div>     
   );
 }
