@@ -12,7 +12,7 @@ export default function FlightSearch () {
     const [results, setResults] = useState([]);
 
     async function searchFlights() {
-        const res = await fetch('http://api.aviationstack.com/v1/flights?access_key=32197ff0f8930d7075cc389ae27514d1', {
+        const res = await fetch('http://api.aviationstack.com/v1/flights?access_key=32197ff0f8930d7075cc389ae27514d1?flight_number=' + {flightNumber}, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
