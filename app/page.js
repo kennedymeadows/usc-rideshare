@@ -14,6 +14,11 @@ export default function Home() {
           Login!
         </button>
       </Link>
-    </div>     
+      <Link href="/flightsearch">
+        <button>
+          Flight Search!
+        </button>
+      </Link>
+    </div>
   );
 }
