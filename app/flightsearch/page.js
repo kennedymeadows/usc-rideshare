@@ -12,16 +12,21 @@ export default function FlightSearch () {
     const [results, setResults] = useState([]);
 
     async function searchFlights() {
-        const res = await fetch(`http://api.aviationstack.com/v1/flights?access_key=32197ff0f8930d7075cc389ae27514d1&flight_number=${flightNumber}`, {
-          method: 'GET',
-          headers: {
+        try {
+          const queryParams = new URLSearchParams({ access_key: 'd1cd466d88e56447c2b7d880eb2a68a8' });
+          const res = await fetch(`/api/flights?${queryParams}`, {
+            method: 'GET',
+            headers: {
               'Content-Type': 'application/json',
-
-          },
-        });
-        const flights = await res.json();
-        setResults(flights);
-    }
+            },
+          });
+          const flights = await res.json();
+          console.log(flights);
+          setResults(flights.data);
+        } catch (error) {
+          console.error('An error occurred while fetching the data.', error);
+        }
+      }
 
   return (
     <div className="mx-auto text-center pt-4 bg-gradient-to-b from-red-100 to-red-900 min-h-screen">
@@ -53,8 +58,15 @@ export default function FlightSearch () {
         </button>
       </div>
       <div>
-        <span>Results: {results}</span>
-      </div>
+            <h2>Flight Information</h2>
+            {results.map((flight, index) => (
+                <div key={index}>
+                    <p>Departure Airport: {flight.departure.airport}</p>
+                    <p>Destination Airport: {flight.arrival.airport}</p>
+                    <p>Flight Time: {flight.departure.scheduled} - {flight.arrival.scheduled}</p>
+                </div>
+            ))}
+        </div>
     </div>     
   );
 }
