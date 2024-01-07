@@ -4,7 +4,7 @@ export default function Login() {
       <div className="min-w-0 flex-1">
         <h3 className="text-xl text-black-300 font-thin font-sans">WELCOME TO</h3>
         <h2 className="text-xl font-bold leading-7 text-white sm:truncate sm:text-8xl sm:tracking-tight">
-          <span className="text-red-600">USC</span> <span className="text-yellow-500">RIDESHARE</span>
+          <span className="text-red-600">TROJAN</span> <span className="text-yellow-500">TRAVEL</span>
         </h2>
       </div>
       <div>
